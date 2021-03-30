@@ -1,0 +1,243 @@
+:root {
+    --colorTextos: #49454567;
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #5785f8;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f2b96, #a8c0ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+p {
+    text-align: center;
+    font-size: 12px;
+    color: var(--colorTextos);
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: #3f2b96;
+}
+
+form {
+    background: #fff;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo {
+    position: relative;
+    margin: 45px;
+}
+
+input {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+input:focus {
+    outline: none;
+    color: #181818
+}
+
+label {
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #3f2b96;
+}
+
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #3f2b96, #a8c0ff);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before{
+    width: 100%;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f2b96, #a8c0ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Animación de fondo */
+
+.bubble {
+    background: #fff;
+    opacity: .3;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -150;
+
+    animation: bubbles 3s linear infinite;
+}
+
+@keyframes bubbles {
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+.bubble:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 7s;
+}
+
+.bubble:nth-child(3){
+    width: 50px;
+    height: 50px;
+    left: 55%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4){
+    width: 80px;
+    height: 80px;
+    left: 75%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(5){
+    width: 20px;
+    height: 20px;
+    left: 85%;
+    animation-duration: 3s;
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(5){
+    width: 40px;
+    height: 40px;
+    left: 22%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(6){
+    width: 30px;
+    height: 30px;
+    left: 90%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7){
+    width: 15px;
+    height: 15px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(8){
+    width: 15px;
+    height: 15px;
+    left: 15%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+
+/* Media */
+
+@media screen and (max-width: 500px){
+    form{
+        width: 80%;
+    }
+}
